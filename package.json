@@ -1,0 +1,34 @@
+{
+  "name": "browser-new-blank-tab",
+  "version": "2.0.0",
+  "description": "Display a blank page when opening new tabs.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wxt -b chrome --mv3",
+    "dev:chrome": "wxt -b chrome --mv3",
+    "dev:edge": "wxt -b edge --mv3",
+    "build": "wxt build -b chrome --mv3",
+    "build:chrome": "wxt build -b chrome --mv3",
+    "build:edge": "wxt build -b edge --mv3",
+    "build:all": "pnpm run clean && pnpm run build:chrome && pnpm run build:edge",
+    "zip": "wxt zip -b chrome --mv3",
+    "zip:chrome": "wxt zip -b chrome --mv3",
+    "zip:edge": "wxt zip -b edge --mv3",
+    "zip:all": "pnpm run clean && pnpm run zip:chrome && pnpm run zip:edge",
+    "clean": "rimraf .output",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
+  },
+  "devDependencies": {
+    "rimraf": "6.1.3",
+    "typescript": "6.0.3",
+    "wxt": "0.20.26"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "spawn-sync"
+    ]
+  }
+}
